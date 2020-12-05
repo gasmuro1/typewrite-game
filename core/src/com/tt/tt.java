@@ -31,7 +31,7 @@ public class tt extends Game {
 		ns = new NivelScreen(this);
 		vs = new VelocidadScreen(this);
 
-		setScreen(ps;
+		setScreen(ps);
 		//ns = new NivelScreen(this);
 
 	}
