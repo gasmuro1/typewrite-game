@@ -50,6 +50,8 @@ public class PartidaScreen extends BaseScreen {
         textos=new HashMap<Integer,String>();
         textos.put (0,"ASDFASDFASDFASDFASDFASDFAÑLKJÑLKJÑLKJÑLKJÑLKJASDFASDFÑLKJÑLKJÑLKJÑLKJÑLKJASDFÑLKJAASDKFJKALDÑALDKJFADASDKDJFASDFÑLK");
         textos.put (2,"ASDFGASDFGASDFGASDFGÑLKJHÑLKJHÑLKJHÑLKJHGHGHGFDSAGFDSAHJKLÑHJKLÑGFDSALSKDJFHGJGHFHGJGHGHFHGASDFGHJKLÑLLKJHAHSHDKALA");
+        textos.put (4,"QWERQWERQWERPOIUPOIUPOIUASDFÑLKJASDFQWERÑLKJPOSOLOSALISALISOLUISDEHESASARAQUESOESOHIJOHILOPULLPISOGUISOFRISOFRISOGUI");
+        textos.put (6,"ZXDVB-.,MNÑLKJASDFQWERTPOIUYPOIUYPOIUY-.,MNÑLKJHASDFGQWERTPOIUYZXCVB-.,MNÑLKJHGASDFQWERTUYAKDJFCMUAÑSOIEURTYAHAÑSOFIANAOENAOWEHCMNAFZXCVA-.,DJQPEORUA");
 
         //  textureAtlas=new TextureAtlas("things1.txt");
 
@@ -138,11 +140,30 @@ public class PartidaScreen extends BaseScreen {
             guns.add(aGuns[1]);
             stage.addActor(lGuns.get(1));
         }
+        else if (game.nivel==5) {
+            guns.add(aGuns[0]);
+            stage.addActor(lGuns.get(0));
+            guns.add(aGuns[1]);
+            stage.addActor(lGuns.get(1));
+
+        }
+        else
+        {
+            guns.add(aGuns[0]);
+            stage.addActor(lGuns.get(0));
+            guns.add(aGuns[1]);
+            stage.addActor(lGuns.get(1));
+            guns.add(aGuns[2]);
+            stage.addActor(lGuns.get(2));
+
+        }
 
     }
 
     @Override
     public void show() {
+         progreso=0;
+         vidas=10;
         stage=new Stage();
         textohacer=textos.get((Integer) game.getNivel());
         System.out.println("hola "+textohacer);

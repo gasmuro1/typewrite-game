@@ -42,6 +42,24 @@ public class VelocidadScreen extends BaseScreen {
         textos.put (3,"ASDFG ASDFG ASDFG ASDFG ÑLKJH ÑLKJH ÑLKJH ÑLKJH  ASA ASA GASA\n" +
                       "SALA LASA LADA JADAS SADA KASA ÑAÑA ÑAÑA FASA SAFA FAFA GAFA\n"+
                       "SALA LASA LADA JADAS SADA KASA ÑAÑA ÑAÑA FASA SAFA FAFA GAFA");
+        textos.put (5,
+                "QWER QWER QWER POIU POIU POIU ASDF ÑLKJ ASDF QWER ÑLKJ \n" +
+                "POSO LOSA LISA LISO LUIS DEHESA SARA QUESO ESO HIJO HILOA\n"+
+                "PISO GUISO FRISO FRISO GUISO RIDO RUIDO RISA TIA TIO JESUS\n"+
+                "PISO GUISO FRISO FRISO GUISO RIDO RUIDO RISA TIA TIO JESUS");
+
+        textos.put (7,"ZXCVB -.,MN ÑLKJ ASDF QWER POIU POIU ÑLKJ -.,MN ASDF ZXCV\n" +
+                "ZAPATO SACO SEBO DEDO CASA CACA PEDO PIS NONO NOSOTROS\n"+
+                "TU AQUEL CHICO COMIA MUCHO CHOCOLATE POR QUE LE GUSTABA\n"+
+                "PISO GUISO FRISO FRISO GUISO RIDO RUIDO RISA TIA TIO ");
+
+        textos.put (9,
+                 "TOMA LA ESCOPETA, JOSE, TOMA LA ESCOPETA Y VETE A CAZAR\n" +
+                 "-LE DIJO AQUELLA MUJER A SU HIJO UNA MADRUGADA- TU HERMANA SE\n" +
+                 "CASA MAÑANA Y QUIERE COMER POLENTA Y LIEBRE.\n" +
+                 "JOSE TOMO LA ESCOPETA Y SE FUE A CAZAR. PRONTO VIO UNA LIEBER QUE\n"+
+                 "SALTABA DE UNAS MATAS Y CORRIA POR UN CAMPO. CARGO LA ESCOPETA");
+
 
         //  textureAtlas=new TextureAtlas("things1.txt");
 
@@ -67,6 +85,7 @@ public class VelocidadScreen extends BaseScreen {
 
     @Override
     public void show() {
+        progreso=0;
         stage=new Stage();
         loadScore();
         myFont = new BitmapFont();
@@ -105,7 +124,6 @@ public class VelocidadScreen extends BaseScreen {
 
 
     private void avanzar(char key){
-        System.out.println(textohacer.toLowerCase().charAt(progreso+1));
         if (key==textohacer.toLowerCase().charAt(progreso+1))
         {
 
@@ -116,7 +134,6 @@ public class VelocidadScreen extends BaseScreen {
             lScore.setText (String.format("Puntos: %d",game.puntuacion));
             if (textohacer.charAt(progreso+1)=='\n')
             {
-                System.out.println("hola");
                 progreso ++;
             }
        /* for (String guns1:guns) {

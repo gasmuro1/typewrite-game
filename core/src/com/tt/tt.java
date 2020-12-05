@@ -25,9 +25,9 @@ public class tt extends Game {
 	@Override
 	public void create () {
 		//setScreen(new BienvenidaScreen(this));
-		nivel=1;
+		nivel=0;
 		ps = new PartidaScreen(this);
-		fs=new com.tt.FinalScreen(this);
+		fs=new FinalScreen(this);
 		ns = new NivelScreen(this);
 		vs = new VelocidadScreen(this);
 

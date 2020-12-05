@@ -72,7 +72,7 @@ public class NivelScreen extends BaseScreen {
         btnLogin.addListener(new ClickListener() {
             @Override
             public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
-                if (game.nivel==3)
+                if (game.nivel==10)
                     game.setScreen(game.fs);
                 else if (game.nivel%2==0)
                    game.setScreen(game.ps);
