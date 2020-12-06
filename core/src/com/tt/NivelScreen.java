@@ -1,6 +1,7 @@
 package com.tt;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.InputAdapter;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
@@ -72,17 +73,27 @@ public class NivelScreen extends BaseScreen {
         btnLogin.addListener(new ClickListener() {
             @Override
             public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
-                if (game.nivel==10)
-                    game.setScreen(game.fs);
-                else if (game.nivel%2==0)
-                   game.setScreen(game.ps);
-                else
-                    game.setScreen(game.vs);
-
+                cambiarNivel();
             }
         });
         stage.addActor(btnLogin);
+        Gdx.input.setInputProcessor(new InputAdapter() {
+            @Override
+            public boolean keyTyped(char character) {
+                 cambiarNivel();
+                 return super.keyTyped(character);
+            }
+        });
 
+
+    }
+    public void cambiarNivel(){
+        if (game.nivel==10)
+            game.setScreen(game.fs);
+        else if (game.nivel%2==0)
+            game.setScreen(game.ps);
+        else
+            game.setScreen(game.vs);
 
 
     }

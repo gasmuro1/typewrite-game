@@ -65,8 +65,8 @@ public class FinalScreen extends BaseScreen {
             @Override
             public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
                    game.puntuacion=0;
-                   game.nivel=0;
-                   game.setScreen(game.ps);
+                   game.nivel=-1;
+                   game.setScreen(game.ns);
             }
         });
         stage.addActor(btnContinuar);

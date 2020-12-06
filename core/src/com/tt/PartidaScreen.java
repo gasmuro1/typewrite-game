@@ -52,6 +52,7 @@ public class PartidaScreen extends BaseScreen {
         textos.put (2,"ASDFGASDFGASDFGASDFGÑLKJHÑLKJHÑLKJHÑLKJHGHGHGFDSAGFDSAHJKLÑHJKLÑGFDSALSKDJFHGJGHFHGJGHGHFHGASDFGHJKLÑLLKJHAHSHDKALA");
         textos.put (4,"QWERQWERQWERPOIUPOIUPOIUASDFÑLKJASDFQWERÑLKJPOSOLOSALISALISOLUISDEHESASARAQUESOESOHIJOHILOPULLPISOGUISOFRISOFRISOGUI");
         textos.put (6,"ZXDVB-.,MNÑLKJASDFQWERTPOIUYPOIUYPOIUY-.,MNÑLKJHASDFGQWERTPOIUYZXCVB-.,MNÑLKJHGASDFQWERTUYAKDJFCMUAÑSOIEURTYAHAÑSOFIANAOENAOWEHCMNAFZXCVA-.,DJQPEORUA");
+        textos.put (8,"MARCOSDIEGOGASPARCRISTINAROSARIOANTONIOMANOLIANDRESESMERALDAOLMOJOSEGEMADANIELLUCIAZAPATOXILOFONVACABACAQUITAMOSALGODONWISKI");
 
         //  textureAtlas=new TextureAtlas("things1.txt");
 
@@ -108,7 +109,7 @@ public class PartidaScreen extends BaseScreen {
         x=Gdx.graphics.getWidth()/2;
         lVidas.setAlignment(Align.left);
         stage.addActor(lVidas);
-        lScore=new Label(String.format("Puntos : %d",game.puntuacion), label1Style);
+        lScore=new Label(String.format("Puntos :%d    Quedan :%d ",game.puntuacion, textohacer.length()-progreso), label1Style);
         lScore.setSize(Gdx.graphics.getWidth()/2,lineHeight);
         lScore.setFontScale(1);
         lScore.setPosition(x,Gdx.graphics.getHeight()-lineHeight);
@@ -140,7 +141,7 @@ public class PartidaScreen extends BaseScreen {
             guns.add(aGuns[1]);
             stage.addActor(lGuns.get(1));
         }
-        else if (game.nivel==5) {
+        else if (game.nivel==4) {
             guns.add(aGuns[0]);
             stage.addActor(lGuns.get(0));
             guns.add(aGuns[1]);
@@ -278,7 +279,7 @@ public class PartidaScreen extends BaseScreen {
         if(comprobarColision())
         {
             game.puntuacion++;
-            lScore.setText(String.format("Puntos:%d",game.puntuacion));
+            lScore.setText(String.format("Puntos :%d    Quedan :%d ",game.puntuacion, textohacer.length()-progreso));
             initNave();
         }
         else if (comprobarSuelo())
